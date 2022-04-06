@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Day 2 Assignment</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<button class="btn prev" onclick="prev()">
+				<i class="fa fa-angle-left"></i>
+			</button>
+			<button class="btn next" onclick="next()">
+				<i class="fa fa-angle-right"></i>
+			</button>
+
+			<div class="slide">
+				<img class="img" src="./img/1.jpg">
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		let prevBtn = document.querySelector(".prev");
+		let nextBtn = document.querySelector(".next");
+		let img = document.querySelector(".img");
+		let images = ['./img/1.jpg', './img/2.jpg', './img/3.jpg', './img/4.jpg'];
+
+		let newimage = 0;
+		
+		function next(){
+			if (newimage < images.length - 1 ) {
+				newimage++;
+			}else{
+				newimage = 0;
+			}
+			
+			img.setAttribute("src", images[newimage]);
+						
+		}
+
+		function prev(){
+
+			if (newimage > 0 ) {
+				newimage--;
+					
+			}else{
+				newimage = images.length -1;
+			}
+				img.setAttribute("src", images[newimage]);
+		}
+
+
+
+	</script>
+</body>
+</html>
